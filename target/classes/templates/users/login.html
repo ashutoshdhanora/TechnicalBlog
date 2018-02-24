@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>Login</title>
+</head>
+
+<body>
+
+<header th:replace="layout :: logged-out" />
+<h1>Login in the Blog</h1>
+
+<form method="post" th:object="${user}">
+    <div><label for="username">Username:</label></div>
+    <input id="username" type="text" name="username" th:value="*{username}" />
+  <span class="formError" th:if="${#fields.hasErrors('username')}"
+        th:errors="*{username}">Invalid username</span>
+
+    <div><label for="passwordHash" th:value="*{username}">Password:</label></div>
+    <input id="passwordHash" type="passwordHash" name="passwordHash" th:value="*{passwordHash}" />
+  <span class="formError" th:if="${#fields.hasErrors('passwordHash')}"
+        th:errors="*{passwordHash}">Invalid password</span>
+
+    <div><input type="submit" value="Login"/></div>
+</form>
+
+</body>
+</html>

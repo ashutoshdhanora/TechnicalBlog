@@ -1,0 +1,29 @@
+<html xmlns:th="http://thymeleaf.org">
+
+<body>
+
+<head th:replace="layout :: site-head">
+    <title>Spring MVC Technical Blog</title>
+</head>
+
+<header th:replace="layout :: logged-in"></header>
+
+<h1> Create Post</h1>
+</body>
+
+<form action="/create">
+    <div>Post Title:</div>
+    <div>
+        <input type="text" name="title" size="70"/>
+    </div>
+
+    <div>Description:</div>
+    <div>
+        <textarea rows="7" cols="100" name="body"/>
+    </div>
+
+    <input type="submit" value="Submit"/>
+
+</form>
+
+</html>
